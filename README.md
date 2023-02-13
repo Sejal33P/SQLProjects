@@ -70,16 +70,24 @@ Project 8 (P10): Physical DB
 Forward engineer previous model
 
 Restaurant Management Model
+
 I. SCENARIO:
 Our database was created to manage a restaurant called Dine Fine. The restaurant operates entirely online, and the customers have the option of asking for a take-away or getting the meal delivered. The menu includes a variety of burgers, pizzas, sandwiches, smoothies and shakes and gives the customer an option of paying through credit card, cash, or a gift card.
+
 II. MODEL WALKTHROUGH
+
 a. The Central Entity
 For this model, Placed_Order is the central entity. The relationship between order placed by a customer and restaurant staff, delivery staff with his/her vehicle as well as the food and beverages ordered are established through this central entity. The details about when the order was placed and delivered along with the status of the order i.e., whether it was delivered, refunded, or cancelled can be tracked through this entity.
 Points to note- Customer to Placed_Order relation is a mandatory one to many, since acustomer’s information will be obtained only after he/she places their first order. Beverage/Pizza/Burger/Sandwich to Placed_Order is an optional many to many relationship since one food or beverage item can be a part of many orders and vice versa.
+
 b. The Three Specializations
 The three different kinds of specializations are displayed in this model. Separate subtype tables are the three food items named burger, pizza, and sandwich. This specialization was preferred for this scenario to distinguish between the different food items. Each food type contains a
 variety of food options to choose from.
-The second specialization is a combination of subtype tables and one supertype table. The supertype table is the employee table and the subtypes tables stemming from them are cashier, kitchen staff and delivery staff. All the employees have many common attributes including name, contact details, address and the subtypes have a few individual attributes. For e.g., delivery staff has a license number in them which is unique for them.
+
+The second specialization is a combination of subtype tables and one supertype table. The supertype table is the employee table and the subtypes tables 
+stemming from them are cashier, kitchen staff and delivery staff. All the employees have many common attributes including name, contact details, address and the subtypes have a few individual attributes. For e.g., delivery staff has a license number in them which is unique for them.
+
 The third specialization is the use of one table with the absence of subtype tables. This has been demonstrated as a Placed_Order table. Instead of separating orders into delivery or takeout, they have been combined as most of the attributes will be the same.
+
 c. Limitation
 A limitation to this model is that each delivery staff is assigned to 1 vehicle that is their own. Thedelivery staff won’t be available to work if his vehicle is out for maintenance or breaks down.
